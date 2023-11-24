@@ -11,7 +11,7 @@ services:
       - db-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init-db.sql
     networks:
-        - app-network
+      - app-network
 
   app:
     image: vladkiew15/my-spring-boot-app:tag
@@ -27,8 +27,6 @@ services:
       SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
     networks:
       - app-network
-
-
 
 networks:
   app-network:
