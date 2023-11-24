@@ -19,13 +19,13 @@ fi
 git --work-tree=/app --git-dir=/app/.git stash pop || true
 
 # Clean up untracked files, excluding the JAR file
-git --work-tree=/app --git-dir=/app/.git clean -fd -e blog-0.0.1-SNAPSHOT.jar
+git --work-tree=/app --git-dir=/app/.git clean -fd -e springboot-blog-rest-api-0.0.1-SNAPSHOT.jar
 
 # Rebuild the application with Maven
 mvn clean install
 
 # Ensure the JAR file is executable
-chmod +x target/blog-0.0.1-SNAPSHOT.jar
+chmod +x target/springboot-blog-rest-api-0.0.1-SNAPSHOT.jar
 
 # Start the application
-java -jar target/blog-0.0.1-SNAPSHOT.jar
+java -jar target/springboot-blog-rest-api-0.0.1-SNAPSHOT.jar
